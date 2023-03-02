@@ -1,5 +1,4 @@
 import { basename } from 'path';
 
-let filename = basename('./demo-readpath/teste.txt');
-
+let filename = basename('./teste.txt');
 console.log(filename);
