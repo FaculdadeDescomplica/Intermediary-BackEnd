@@ -2,7 +2,7 @@ import express from "express";
 let router = express.Router();
 
 import userController from "./UserController.js";
-import courseController from "./CourseController";
+import courseController from "./CourseController.js";
 import teacherController from "./TeacherController.js";
 import evaluationController from "./EvaluationController.js";
 
