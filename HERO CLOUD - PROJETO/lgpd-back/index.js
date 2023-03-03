@@ -1,14 +1,16 @@
-import { createServer } from 'http';
+import express from "express";
+import cors from "cors";
+import pkg from 'body-parser';
+import router from "./routes/routes.js";
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const app = express();
+const { json, urlencoded } = pkg;
 
-const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
+app.use(json());
+app.use(urlencoded({ extended: true }));
+app.use(cors());
+app.use("/", router);
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(3000, function(){
+    console.log("Listening to port 3000");
+})
