@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "0dca6f16-6df3-41c9-8996-e0c7cc9fe381",
+		"name": "Descomplica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8028447"
+	},
+	"item": [
+		{
+			"name": "Create Requests",
+			"item": [
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Ana\",\r\n    \"last_name\": \"Teixeira\",\r\n    \"email\":\"ateixeira@gmail.com.br\",\r\n    \"gender\": \"femme\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/addUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gabriel Toledo\",\r\n    \"course_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/addTeacher",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addTeacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Programação\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/addCourse",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Evaluation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"course_id\": 1,\r\n    \"concept\" : \"Concept\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/addEvaluation",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addEvaluation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Requests",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/getAllUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Teachers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/getAllTeachers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getAllTeachers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Teacher By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/teacher/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teacher",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Evaluations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/getAllEvaluations",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getAllEvaluations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Evaluation By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/evaluation/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"evaluation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/getAllCourses",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getAllCourses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/course/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"course",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Requests",
+			"item": [
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/deleteUser/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteUser",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Teacher By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/deleteTeacher/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteTeacher",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/deleteCourse/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteCourse",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Evaluation By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/deleteEvaluation/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteEvaluation",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update Requests",
+			"item": [
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userFirstName\": \"Ana\",\r\n    \"userLastName\": \"Cristina\",\r\n    \"userEmail\":\"acrist@email.com.br\",\r\n    \"userGender\": \"F\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/updateUser/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateUser",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Teacher",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Leandro Augusto\",\r\n    \"course_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/updateTeacher/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateTeacher",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseName\": \"Engenharia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/updateCourse/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateCourse",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Evaluation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 5,\r\n    \"courseId\": 1,\r\n    \"evaluationConcept\" : \"Concept\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/updateEvaluation/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateEvaluation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
