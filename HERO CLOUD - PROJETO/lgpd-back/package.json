@@ -9,7 +9,8 @@
   "author": "Ana Teixeira",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "sequelize": "^6.29.0"
   },
   "type": "module"
 }
