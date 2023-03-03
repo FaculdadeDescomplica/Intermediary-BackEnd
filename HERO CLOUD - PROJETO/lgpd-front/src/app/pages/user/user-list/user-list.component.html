@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="py-3 text-center">
+    <h3>Cadastro de Usuários</h3>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex align-content-end justify-content-end pb-5">
+      <a class="btn btn-primary" [href]="'/user'">CADASTRAR USUÁRIO</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mb-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Email</th>
+          <th scope="col">Genero</th>
+          <th scope="col">Ação</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <th scope="row">{{user.id}}</th>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{getLabelGender(user.gender)}}</td>
+          <td>
+            <a class="btn btn-outline-primary" [href]="'/user?id='+user.id">
+              <fa-icon [icon]="faPencil"></fa-icon>
+            </a>
+            <button type="button" class="btn btn-outline-danger" data-toggle="confirmation" data-placement="right" (click)="delete(user.id)">
+              <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

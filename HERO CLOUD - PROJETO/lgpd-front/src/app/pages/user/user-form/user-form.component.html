@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="py-3 text-center">
+    <h3>Cadastro de Usuários</h3>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex align-content-end justify-content-end pb-5">
+      <a class="btn btn-primary" [href]="'/'">VOLTAR</a>
+    </div>
+  </div>
+  <div class="row d-flex align-content-center justify-content-center">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <formly-form
+        [form]="form"
+        [model]="model"
+        [fields]="fields">
+      </formly-form>
+
+      <div class="col-12 d-flex align-content-center justify-content-center pt-5">
+        <button class="btn btn-primary" type="submit"  >
+          Salvar
+        </button>
+
+        <button class="btn btn-danger" type="reset">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+

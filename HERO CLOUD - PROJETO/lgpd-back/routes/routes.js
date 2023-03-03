@@ -12,5 +12,8 @@ router.get("/", function(req, res) {
 });
 
 router.use("/", userController);
+router.use("/", courseController);
+router.use("/", teacherController);
+router.use("/", evaluationController);
 
 export default router;
