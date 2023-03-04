@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="py-3 text-center">
+      <h3>Cadastro de Professores</h3>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex align-content-end justify-content-end pb-5">
+        <a class="btn btn-primary" [href]="'/user'">CADASTRAR PROFESSOR</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mb-12">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col"># Curso</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let teacher of teachers">
+            <th scope="row">{{teacher.id}}</th>
+            <td>{{teacher.name}}</td>
+            <td>{{getLabelCourse(teacher.course_id)}}</td>
+            <td>
+              <a class="btn btn-outline-primary" [href]="'/user?id='+user.id">
+                <fa-icon [icon]="faPencil"></fa-icon>
+              </a>
+              <button type="button" class="btn btn-outline-danger" data-toggle="confirmation" data-placement="right" (click)="delete(user.id)">
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
