@@ -1,29 +1,30 @@
 import express from "express";
-let router = express.Router();
-import evaluationRepository from "../repositories/EvaluationRepository.js";
+import evaluationService from "../services/EvaluationService.js";
 
-router.post("/addEvaluation", function(req, res){
+let router = express.Router();
+
+router.post("/addEvaluation", function (req, res) {
     const evaluationModel = {
         user_id: req.body.user_id,
         course_id: req.body.course_id,
         concept: req.body.concept
     }
-    const evaluation = evaluationRepository.saveEvaluation(evaluationModel);
+    const evaluation = evaluationService.saveEvaluation(evaluationModel);
     return res.status(201).json(evaluation);
 });
 
-router.get("/getAllEvaluations", async function(req, res){
-    const allEvaluations = await evaluationRepository.getAllEvaluations();
+router.get("/getAllEvaluations", async function (req, res) {
+    const allEvaluations = await evaluationService.getAllEvaluations();
     return res.status(200).json(allEvaluations);
 });
 
 router.get("/evaluation/:id", async function (req, res) {
-    const evaluation = await evaluationRepository.getEvaluationById(req.params.id);
+    const evaluation = await evaluationService.getEvaluationById(req.params.id);
     return res.status(200).json(evaluation);
 });
 
 router.delete("/deleteEvaluation/:id", async function (req, res) {
-    const evaluation = await evaluationRepository.deleteEvaluationById(req.params.id);
+    const evaluation = await evaluationService.deleteEvaluationById(req.params.id);
     return res.status(200).json(evaluation);
 });
 
@@ -34,7 +35,7 @@ router.put("/updateEvaluation/:id", async function (req, res) {
         concept: req.body.concept
     };
 
-    const evaluation = await evaluationRepository.updateEvaluationById(req.params.id, evaluationModel);
+    const evaluation = await evaluationService.updateEvaluationById(req.params.id, evaluationModel);
     return res.status(200).json(evaluation);
 });
 

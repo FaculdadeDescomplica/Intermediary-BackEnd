@@ -1,8 +1,9 @@
 import express from "express";
-let router = express.Router();
-import userRepository from "../repositories/UserRepository.js"
+import userService from "../services/UserService.js";
 
-//1- salvar usuario
+let router = express.Router();
+
+// salvar usuario
 router.post("/addUser", async function (req, res) {
     const userModel = {
         first_name: req.body.first_name,
@@ -10,38 +11,37 @@ router.post("/addUser", async function (req, res) {
         email: req.body.email,
         gender: req.body.gender,
     }
-    const user = await userRepository.saveUser(userModel);
-    return res.status(201).json(user);
+    const user = await userService.saveUser(userModel);
+    return res.status(200).json(user);
 });
 
-//2- buscar todos usuarios
+// buscar todos usuarios
 router.get("/getAllUsers", async function (req, res) {
-    const allUsers = await userRepository.getAllUsers();
+    const allUsers = await userService.getAllUsers();
     return res.status(200).json(allUsers);
 });
 
-//3- buscar por id
+// buscar por id
 router.get("/user/:id", async function (req, res) {
-    const user = await userRepository.getUserById(req.params.id);
+    const user = await userService.getUserById(req.params.id);
     return res.status(200).json(user);
 });
 
-//4- deletar por id
+// deletar por id
 router.delete("/deleteUser/:id", async function (req, res) {
-    const user = await userRepository.deleteUserById(req.params.id);
+    const user = await userService.deleteUserById(req.params.id);
     return res.status(200).json(user);
 });
 
-//5- atualizar por id
+//  atualizar por id
 router.put("/updateUser/:id", async function (req, res) {
     const userModel = {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
         gender: req.body.gender,
-    };
-
-    const user = await userRepository.updateUserById(req.params.id, userModel);
+    }
+    const user = await userService.updateUserById(req.params.id, userModel);
     return res.status(200).json(user);
 });
 
