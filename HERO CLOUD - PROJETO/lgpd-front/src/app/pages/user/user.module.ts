@@ -4,18 +4,21 @@ import {UserRoutingModule} from "./user-routing.module";
 import {SharedModule} from "../../shared/shared.module";
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserListComponent } from './user-list/user-list.component';
-
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     UserFormComponent,
-    UserListComponent
+    UserListComponent,
+    //Modulo 7- Adicionar as 2 declarações abaixo
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
   ]
 })
-export class UserModule { }
+export class UserModule { 
+
+}

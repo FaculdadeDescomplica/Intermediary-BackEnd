@@ -4,12 +4,12 @@
   </div>
   <div class="row">
     <div class="col-12 d-flex align-content-end justify-content-end pb-5">
-      <a class="btn btn-primary" [href]="'/user'">CADASTRAR USUÁRIO</a>
+      <a class="btn btn-primary" [href]="'/addUser'">CADASTRAR USUÁRIO</a>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12 mb-12">
-      <table class="table">
+      <table class="table" caption="user_table">
         <thead>
         <tr>
           <th scope="col">#</th>
@@ -23,12 +23,12 @@
         <tbody>
         <tr *ngFor="let user of users">
           <th scope="row">{{user.id}}</th>
-          <td>{{user.firstName}}</td>
-          <td>{{user.lastName}}</td>
+          <td>{{user.first_name}}</td>
+          <td>{{user.last_name}}</td>
           <td>{{user.email}}</td>
           <td>{{getLabelGender(user.gender)}}</td>
           <td>
-            <a class="btn btn-outline-primary" [href]="'/user?id='+user.id">
+            <a class="btn btn-outline-primary" [href]="'/addUser?id='+user.id">
               <fa-icon [icon]="faPencil"></fa-icon>
             </a>
             <button type="button" class="btn btn-outline-danger" data-toggle="confirmation" data-placement="right" (click)="delete(user.id)">

@@ -49,13 +49,15 @@ export class UserService {
   }
 
   public async put<T>( options: GetOptions ) : Promise<T> {
+    //Modulo 7 - Adicionar esse config para trocar o content-type do header
+    let config = {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    }
     try {
-      let axiosResponse = await this.axiosClient.request<T>({
-        method: "put",
-        url: options.url,
-        params: options.params,
-        data: options.data
-      });
+      //Modulo 7 - Alterar o método request para esse put passando esses parametros
+      let axiosResponse = await this.axiosClient.put<T>(options.url, options.data, config);
 
       return( axiosResponse.data );
     } catch ( error ) {
@@ -64,13 +66,15 @@ export class UserService {
   }
 
   public async post<T>( options: GetOptions ) : Promise<T> {
+    //Modulo 7 - Adicionar esse config para trocar o content-type do header
+    let config = {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    }
     try {
-      let axiosResponse = await this.axiosClient.request<T>({
-        method: "post",
-        url: options.url,
-        params: options.params,
-        data: options.data
-      });
+      //Modulo 7 - Alterar o método request para esse post passando esses parametros
+      let axiosResponse = await this.axiosClient.post<T>(options.url, options.data, config);
 
       return( axiosResponse.data );
     } catch ( error ) {

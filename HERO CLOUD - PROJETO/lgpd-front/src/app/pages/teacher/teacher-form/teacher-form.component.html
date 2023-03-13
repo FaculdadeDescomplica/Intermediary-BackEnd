@@ -1,14 +1,15 @@
+<!--Criei esse html aqui a partir do de usuarios e alterei os o h3 da linha 4 -->
 <div class="container">
     <div class="py-3 text-center">
       <h3>Cadastro de Professores</h3>
     </div>
     <div class="row">
       <div class="col-12 d-flex align-content-end justify-content-end pb-5">
-        <a class="btn btn-primary" [href]="'/'">VOLTAR</a>
+        <a class="btn btn-primary" [href]="'/teachers'">VOLTAR</a>
       </div>
     </div>
     <div class="row d-flex align-content-center justify-content-center">
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <form [formGroup]="form">
         <formly-form
           [form]="form"
           [model]="model"
@@ -27,3 +28,5 @@
       </form>
     </div>
   </div>
+  
+  
