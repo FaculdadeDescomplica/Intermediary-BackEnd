@@ -1,6 +1,6 @@
 import express from "express";
 let router = express.Router();
-import userRepository from "../repositories/UserRepository.js";
+import userService from "../services/UserService.js";
 
 //1- salvar usuario
 router.post("/addUser", async function (req, res) {
