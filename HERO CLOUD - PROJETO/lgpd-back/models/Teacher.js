@@ -1,7 +1,7 @@
 import DataTypes from 'sequelize';
 import sequelize from '../utils/database.js';
 
-const Teacher = sequelize.define('Teacher', {
+const Teacher = sequelize.define('teacher', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -11,11 +11,7 @@ const Teacher = sequelize.define('Teacher', {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    course_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
     }
-});
+},{ underscored : true });
 
 export default Teacher;
