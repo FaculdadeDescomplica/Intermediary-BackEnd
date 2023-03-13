@@ -9,9 +9,9 @@
   "author": "Ana Teixeira",
   "license": "ISC",
   "dependencies": {
-    "file-system": "^2.2.2",
+    "file-system": "^1.2.2",
     "inquirer": "^9.1.4",
     "path": "^0.12.7"
   },
-  "type":"module"
+  "type": "module"
 }
