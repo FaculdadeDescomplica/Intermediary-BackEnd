@@ -27,7 +27,7 @@
               <a class="btn btn-outline-primary" [href]="'/addTeacher?id='+teacher.id">
                 <fa-icon [icon]="faPencil"></fa-icon>
               </a>
-              <button type="button" class="btn btn-outline-danger" data-toggle="confirmation" data-placement="right">
+              <button type="button" class="btn btn-outline-danger" data-toggle="confirmation" data-placement="right" (click)="delete(teacher.id)">
                 <fa-icon [icon]="faTrash"></fa-icon>
               </button>
             </td>

@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="row d-flex align-content-center justify-content-center">
-      <form [formGroup]="form">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <formly-form
           [form]="form"
           [model]="model"
