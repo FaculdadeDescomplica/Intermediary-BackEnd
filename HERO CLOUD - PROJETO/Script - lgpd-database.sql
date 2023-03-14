@@ -1,9 +1,13 @@
-drop table "Users";
-drop table "Teachers" ;
-drop table "Courses" ;
-drop table "Evaluations" ;
+DROP TABLE public."Courses" CASCADE;
 
-CREATE TABLE "Users" (
+DROP TABLE public."Evaluations" CASCADE;
+
+DROP TABLE public."Teachers" CASCADE;
+
+DROP TABLE public."Users" CASCADE;
+
+
+CREATE TABLE "users" (
 	id SERIAL PRIMARY KEY,
 	first_name VARCHAR ( 50 ) NOT NULL,
 	last_name VARCHAR ( 50 ) NOT NULL,
