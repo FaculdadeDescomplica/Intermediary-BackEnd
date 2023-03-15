@@ -8,14 +8,10 @@
     </div>
   </div>
   <div class="row d-flex align-content-center justify-content-center">
-    <form [formGroup]="form" (ngSubmit)="onSubmit(fileInput.files)">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       
       <form [formGroup]="form">
-        <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-        <!--Modulo 7 - Alterar essas tags abaixo para ficar assim adicionar url, file e button-->
-        <img [src]="url" alt="Image Preview" width="200px" height="200px" class="row d-flex align-content-center justify-content-center">
-        <input type="file" style="display: none;" name="file" accept="image/*" [multiple]="false" (change)="onSelectNewFile($event)" #fileInput>
-        <input type="button" class="btn btn-primary" value="Choose file" (click)="fileInput.click()" />
+        <formly-form [model]="model" [fields]="fields" [form]="form"></formly-form>
       </form>
 
       <div class="col-12 d-flex align-content-center justify-content-center pt-5">
