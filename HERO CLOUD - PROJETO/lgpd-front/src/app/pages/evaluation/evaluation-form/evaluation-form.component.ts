@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 
 //add esses imports
 import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormlyFieldConfig } from '@ngx-formly/core';
+import { SharedService } from 'src/app/shared/shared.service';
+import { EvaluationService } from '../evaluation.service';
 @Component({
   selector: 'app-evaluation-form',
   templateUrl: './evaluation-form.component.html',
@@ -51,4 +54,54 @@ export class EvaluationFormComponent {
       ]
     }
   ];
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private evaluationService: EvaluationService,
+    private sharedService: SharedService
+  ) {
+
+
+    this.route.queryParams.subscribe(async (params: any) => {
+      if (params.id !== undefined && params.id !== null) {
+        this.evaluation = await this.evaluationService.get<any>({
+          url: `http://localhost:3000/evaluation/${params.id}`,
+          params: {
+
+          }
+        });
+        this.model = this.evaluation;
+      } else {
+        this.model = {}
+      }
+
+    });
+  }
+
+  async onSubmit(): Promise<void> {
+    if (this.form.valid) {
+      if (this.model?.id !== undefined && this.model?.id !== null) {
+        this.evaluation = await this.evaluationService.put<any>({
+          url: `http://localhost:3000/updateEvaluation/${this.model?.id}`,
+          params: {
+
+          },
+          data: this.model
+        });
+
+      } else {
+        delete this.model?.id;
+        await this.evaluationService.post<any>({
+          url: `http://localhost:3000/addEvaluation`,
+          params: {
+
+          },
+          data: this.model
+        })
+      }
+
+    }
+    await this.router.navigate(['/evaluations']);
+  }
 }
