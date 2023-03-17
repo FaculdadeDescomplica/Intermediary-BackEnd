@@ -1,9 +1,9 @@
-import { ErrorHandler, Injectable } from "@angular/core";
+import {ErrorHandler, Injectable} from "@angular/core";
 import axios from 'axios';
 import { AxiosInstance } from "axios";
 
 export interface Params {
-  [key: string]: any;
+  [ key: string ]: any;
 }
 
 export interface GetOptions {
@@ -23,7 +23,7 @@ export class UserService {
   private axiosClient: AxiosInstance;
   private errorHandler: ErrorHandler;
 
-  constructor(errorHandler: ErrorHandler) {
+  constructor( errorHandler: ErrorHandler ) {
     this.errorHandler = errorHandler;
 
     this.axiosClient = axios.create({
@@ -34,7 +34,7 @@ export class UserService {
     });
   }
 
-  public async get<T>(options: GetOptions): Promise<T> {
+  public async get<T>( options: GetOptions ) : Promise<T> {
     try {
       let axiosResponse = await this.axiosClient.request<T>({
         method: "get",
@@ -42,42 +42,42 @@ export class UserService {
         params: options.params
       });
 
-      return (axiosResponse.data);
-    } catch (error) {
-      return (Promise.reject(this.normalizeError(error)));
+      return( axiosResponse.data );
+    } catch ( error ) {
+      return( Promise.reject( this.normalizeError( error ) ) );
     }
   }
 
-  public async put<T>(options: GetOptions): Promise<T> {
-    let config = {
-      headers: {
-        "Content-Type": "multipart/form-data"
-      }
-    }
+  public async put<T>( options: GetOptions ) : Promise<T> {
     try {
-      let axiosResponse = await this.axiosClient.put<T>(options.url, options.data, config);
+      let axiosResponse = await this.axiosClient.request<T>({
+        method: "put",
+        url: options.url,
+        params: options.params,
+        data: options.data
+      });
 
-      return (axiosResponse.data);
-    } catch (error) {
-      return (Promise.reject(this.normalizeError(error)));
+      return( axiosResponse.data );
+    } catch ( error ) {
+      return( Promise.reject( this.normalizeError( error ) ) );
     }
   }
 
-  public async post<T>(options: GetOptions): Promise<T> {
-    let config = {
-      headers: {
-        "Content-Type": "multipart/form-data"
-      }
-    }
+  public async post<T>( options: GetOptions ) : Promise<T> {
     try {
-      let axiosResponse = await this.axiosClient.post<T>(options.url, options.data, config);
+      let axiosResponse = await this.axiosClient.request<T>({
+        method: "post",
+        url: options.url,
+        params: options.params,
+        data: options.data
+      });
 
-      return (axiosResponse.data);
-    } catch (error) {
-      return (Promise.reject(this.normalizeError(error)));
+      return( axiosResponse.data );
+    } catch ( error ) {
+      return( Promise.reject( this.normalizeError( error ) ) );
     }
   }
-  public async delete<T>(options: GetOptions): Promise<T> {
+  public async delete<T>( options: GetOptions ) : Promise<T> {
     try {
       let axiosResponse = await this.axiosClient.request<T>({
         method: "delete",
@@ -85,17 +85,17 @@ export class UserService {
         params: options.params
       });
 
-      return (axiosResponse.data);
-    } catch (error) {
-      return (Promise.reject(this.normalizeError(error)));
+      return( axiosResponse.data );
+    } catch ( error ) {
+      return( Promise.reject( this.normalizeError( error ) ) );
     }
   }
 
-  private normalizeError(error: any): ErrorResponse {
+  private normalizeError( error: any ) : ErrorResponse {
     console.log('Error:', error)
-    this.errorHandler.handleError(error);
+    this.errorHandler.handleError( error );
 
-    return ({
+    return({
       id: "-1",
       code: "UnknownError",
       message: "An unexpected error occurred."
