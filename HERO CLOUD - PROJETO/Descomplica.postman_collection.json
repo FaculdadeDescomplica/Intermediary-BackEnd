@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0dca6f16-6df3-41c9-8996-e0c7cc9fe381",
+		"_postman_id": "0bd0c3d8-572f-40d8-8fd5-90b13d9297ca",
 		"name": "Descomplica",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "8028447"
@@ -15,13 +15,34 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"first_name\": \"Ana\",\r\n    \"last_name\": \"Teixeira\",\r\n    \"email\":\"ateixeira@gmail.com.br\",\r\n    \"gender\": \"femme\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Ana",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Teixeira",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ateixeira@gmail.com.br",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "feme",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/anacr/Downloads/thisisengineering-raeng-zdBOU0faYK4-unsplash.jpg"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "localhost:3000/addUser",
@@ -124,6 +145,24 @@
 			"item": [
 				{
 					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/getAllUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Image",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -363,7 +402,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userFirstName\": \"Ana\",\r\n    \"userLastName\": \"Cristina\",\r\n    \"userEmail\":\"acrist@email.com.br\",\r\n    \"userGender\": \"F\"\r\n}",
+							"raw": "{\r\n    \"first_name\": \"Ana\",\r\n    \"last_name\": \"Pereira\",\r\n    \"email\": \"ateixeira@gmail.com.br\",\r\n    \"gender\": \"femme\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -371,14 +410,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/updateUser/4",
+							"raw": "localhost:3000/updateUser/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"updateUser",
-								"4"
+								"1"
 							]
 						}
 					},
@@ -391,7 +430,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Leandro Augusto\",\r\n    \"course_id\": 1\r\n}",
+							"raw": "{\r\n    \"name\": \"ANA Toledo\",\r\n    \"course_id\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -419,7 +458,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"courseName\": \"Engenharia\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Programação backend\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -447,7 +486,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\": 5,\r\n    \"courseId\": 1,\r\n    \"evaluationConcept\" : \"Concept\"\r\n}",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"course_id\": 1,\r\n    \"concept\" : \"A\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

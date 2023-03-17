@@ -11,7 +11,7 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit(fileInput.files)">
 
       <form [formGroup]="form">
-        <formly-form [model]="model" [fields]="fields" [form]="form"></formly-form>
+        <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
         <!-- adicionar o options no HTML  [options]="options" -->
         <img [src]="url" alt="Image Preview" width="200px" height="200px"
           class="row d-flex align-content-center justify-content-center">
