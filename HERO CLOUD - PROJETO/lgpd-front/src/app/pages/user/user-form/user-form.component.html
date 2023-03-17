@@ -8,14 +8,20 @@
     </div>
   </div>
   <div class="row d-flex align-content-center justify-content-center">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      
+    <form [formGroup]="form" (ngSubmit)="onSubmit(fileInput.files)">
+
       <form [formGroup]="form">
         <formly-form [model]="model" [fields]="fields" [form]="form"></formly-form>
+        <!-- adicionar o options no HTML  [options]="options" -->
+        <img [src]="url" alt="Image Preview" width="200px" height="200px"
+          class="row d-flex align-content-center justify-content-center">
+        <input type="file" style="display: none;" name="file" accept="image/*" [multiple]="false"
+          (change)="onSelectNewFile($event)" #fileInput>
+        <input type="button" class="btn btn-primary" value="Choose file" (click)="fileInput.click()" />
       </form>
 
       <div class="col-12 d-flex align-content-center justify-content-center pt-5">
-        <button class="btn btn-primary" type="submit"  >
+        <button class="btn btn-primary" type="submit">
           Salvar
         </button>
 
@@ -26,4 +32,3 @@
     </form>
   </div>
 </div>
-

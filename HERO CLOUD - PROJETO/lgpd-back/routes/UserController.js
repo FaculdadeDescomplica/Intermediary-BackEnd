@@ -17,6 +17,7 @@ const upload = multer({ storage: storage }).single('file');
 
 // salvar usuario
 router.post("/addUser", async function (req, res) {
+
     const userModel = {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
@@ -24,8 +25,10 @@ router.post("/addUser", async function (req, res) {
         gender: req.body.gender,
         profile_picture: req.file.path
     }
+
     const user = await userService.saveUser(userModel);
     return res.status(200).json(user);
+
 });
 
 // buscar todos usuarios
@@ -48,6 +51,7 @@ router.delete("/deleteUser/:id", async function (req, res) {
 
 //  atualizar por id
 router.put("/updateUser/:id", async function (req, res) {
+    // adicionar upload
     const userModel = {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
@@ -55,8 +59,11 @@ router.put("/updateUser/:id", async function (req, res) {
         gender: req.body.gender,
         profile_picture: req.file.path
     }
+
+
     const user = await userService.updateUserById(req.params.id, userModel);
     return res.status(200).json(user);
+
 });
 
 export default router;
