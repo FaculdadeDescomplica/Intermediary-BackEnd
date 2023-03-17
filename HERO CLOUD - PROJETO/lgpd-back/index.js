@@ -13,7 +13,6 @@ const { json, urlencoded } = pkg;
 
 app.use(json());
 app.use(urlencoded({ extended: true }));
-app.use("/", router);
 app.use(cors());
 
 (async () => {
@@ -27,3 +26,5 @@ app.use(cors());
         console.log(err);
     }
 })();
+
+app.use("/", router);
