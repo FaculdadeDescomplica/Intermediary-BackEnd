@@ -18,7 +18,7 @@ Outras melhorias são individuais: cada aluno pode (e deve) trabalhar no seu pro
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você instalou a versão mais recente do `<Node.js>`
 * Você tem uma máquina `<Windows / Linux / Mac>`.  Para a gravação, o sistema operacional utilizado foi Windows.
-* Você assistiu a video-aula de convfiguração do ambiente.
+* Você assistiu a video-aula de configuração do ambiente.
 
 ## 🚀 Execução do Projeto
 
