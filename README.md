@@ -32,7 +32,7 @@ Para rodar o front-end, acesse o diretório <lgpd-front> e execute o comando:
 ng serve
 ```
 
-## ☕  Outros detalhs do projeto
+## ☕  Outros detalhes do projeto
 
 Utilizamos o <Git Flow> para estudar versionamento de código e por isso existem algumas ramificações criadas para práticar e visualizar em ferramentas gráficas como o Sourcetree.
 
